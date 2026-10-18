@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonance Edge — Sovereign On-Premise Intelligence for Trial Counsel</title>
+    <meta name="description" content="Air-gapped 14B parameter foundation substrate executing on Apple Silicon Metal in a 3.40 GB unified memory footprint. Zero network egress. Absolute statutory privilege.">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resonanceedge.tech/">
+    <meta property="og:title" content="Resonance Edge — Sovereign On-Premise Intelligence">
+    <meta property="og:description" content="14B parameter precision executing on Apple Silicon Metal in 3.40 GB unified memory. Zero network egress. Absolute attorney-client privilege.">
+    <meta property="og:image" content="https://resonanceedge.tech/assets/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <!-- Fonts: Geist & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Geist', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#08090a',
+                        surface: '#0d0f12',
+                        'surface-subtle': '#14171d',
+                        'cad-border': 'rgba(255, 255, 255, 0.08)',
+                        'cad-border-focus': 'rgba(255, 255, 255, 0.20)',
+                        brand: {
+                            emerald: '#10b981',
+                            cyan: '#06b6d4',
+                            dim: 'rgba(16, 185, 129, 0.08)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Precision CAD hairline grid */
+        .cad-grid {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+
+        /* Architectural hairline border */
+        .hairline {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .hairline-b {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hairline-t {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Subtle status pulse */
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
+        }
+        .pulse-status {
+            animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-obsidian text-zinc-300 font-sans antialiased selection:bg-emerald-500 selection:text-black min-h-screen relative overflow-x-hidden">
+
+    <!-- CAD Coordinate Background Grid -->
+    <div class="fixed inset-0 cad-grid pointer-events-none z-0"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian/90 hairline-b transition-all">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Brand Mark -->
+            <a href="/" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 rounded-[2px] bg-surface hairline flex items-center justify-center p-1 group-hover:border-zinc-500 transition-colors">
+                    <img src="assets/logo.png" alt="Resonance Edge" class="w-full h-full object-contain">
+                </div>
+                <div class="flex items-baseline gap-2">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-white uppercase">RESONANCE EDGE</span>
+                    <span class="text-[10px] font-mono text-zinc-500">INC.</span>
+                </div>
+            </a>
+
+            <!-- System Status & Action -->
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex items-center gap-4 text-[11px] font-mono text-zinc-400">
+                    <span class="flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-[1px] bg-emerald-400 pulse-status"></span>
+                        AIR-GAP VERIFIED
+                    </span>
+                    <span class="text-zinc-700">/</span>
+                    <span class="text-zinc-500">RES-14B-M // METAL 3.40 GB</span>
+                </div>
+                <a href="#evaluation" class="px-3.5 py-1.5 rounded-[2px] bg-zinc-900 hairline hover:border-zinc-500 text-xs font-mono text-zinc-200 hover:text-white transition-colors duration-150">
+                    EVALUATION DOSSIER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section: Dossier Header -->
+        <section class="pt-20 pb-16 px-6 max-w-6xl mx-auto">
+            <!-- Classification Badge -->
+            <div class="flex items-center gap-3 mb-8">
+                <span class="px-2 py-0.5 rounded-[2px] bg-zinc-900 hairline text-[11px] font-mono text-zinc-400 tracking-wider">
+                    SPECIFICATION 1.0
+                </span>
+                <span class="text-zinc-600 font-mono text-xs">+</span>
+                <span class="text-[11px] font-mono text-emerald-400 tracking-wider">
+                    PHYSICAL PERIMETER SOVEREIGNTY
+                </span>
+            </div>
+
+            <!-- Stark Monochromatic Headline -->
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-white max-w-3xl leading-[1.2] mb-5">
+                Physical Data Sovereignty for Catastrophic Trial Counsel.
+            </h1>
+
+            <!-- Understated Subhead -->
+            <p class="text-sm sm:text-base text-zinc-400 max-w-2xl font-normal leading-relaxed mb-10">
+                14-billion parameter foundation intelligence executing natively within a <span class="text-zinc-200 font-mono font-medium">3.40 GB active memory footprint</span> on Apple Silicon Metal. Zero network transmission. Guaranteed attorney-client privilege governed by physics, not vendor agreements.
+            </p>
+
+            <!-- Technical Summary Indicators -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 hairline rounded-[2px] overflow-hidden max-w-3xl">
+                <div class="bg-surface p-4">
+                    <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1">Compute Target</div>
+                    <div class="text-sm font-mono font-medium text-white">Apple Silicon Metal</div>
+                    <div class="text-[11px] font-mono text-zinc-400 mt-0.5">M-Series Unified RAM</div>
+                </div>
+                <div class="bg-surface p-4">
+                    <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1">Active Footprint</div>
+                    <div class="text-sm font-mono font-medium text-white">3.40 GB Resident</div>
+                    <div class="text-[11px] font-mono text-emerald-400 mt-0.5">Radix-3 + CSR Core</div>
+                </div>
+                <div class="bg-surface p-4">
+                    <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1">Network Boundary</div>
+                    <div class="text-sm font-mono font-medium text-white">0.00 KB Egress</div>
+                    <div class="text-[11px] font-mono text-zinc-400 mt-0.5">Air-Gapped Loopback</div>
+                </div>
+                <div class="bg-surface p-4">
+                    <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1">Legal Doctrine</div>
+                    <div class="text-sm font-mono font-medium text-white">FRE Rule 502</div>
+                    <div class="text-[11px] font-mono text-zinc-400 mt-0.5">Unwaived Privilege</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Telemetry Dossier -->
+        <section class="py-12 px-6 max-w-6xl mx-auto hairline-t">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">// SYSTEM TELEMETRY</span>
+                    <h2 class="text-xl sm:text-2xl font-medium tracking-tight text-white mt-1">Hardware Residency & Execution Bounds</h2>
+                </div>
+                <span class="text-xs font-mono text-zinc-500">M1 / M2 / M3 / M4 ARCHITECTURE</span>
+            </div>
+
+            <!-- CAD Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                <!-- Panel 1: Memory Footprint Breakdown -->
+                <div class="md:col-span-8 bg-surface hairline rounded-[2px] p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-mono mb-4">
+                            <span class="text-zinc-400">UNIFIED RAM RESIDENCY SPECIFICATION</span>
+                            <span class="text-emerald-400 font-semibold">3.40 GB / 16.00 GB BASE POOL</span>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-mono font-medium text-white tracking-tight mb-2">
+                            3.40 <span class="text-sm text-zinc-500 font-normal">GB ACTIVE DECODE</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-xl">
+                            By combining Radix-3 ternary arithmetic with Compressed Sparse Row (CSR) outlier channels, the 14B Qwen foundation model runs entirely resident inside the unified memory of standard consumer Apple Silicon. Token decoding streams directly from the high-bandwidth memory bus without paging or quantization degradation.
+                        </p>
+                    </div>
+
+                    <!-- Memory Allocation Table -->
+                    <div class="mt-8 pt-4 hairline-t">
+                        <div class="w-full h-2 rounded-[1px] bg-zinc-900 overflow-hidden flex mb-3">
+                            <div class="h-full bg-emerald-500" style="width: 72.6%" title="Radix-3 Ternary Weights (2.47 GB)"></div>
+                            <div class="h-full bg-teal-400" style="width: 12.9%" title="CSR Outlier Matrix (0.44 GB)"></div>
+                            <div class="h-full bg-zinc-400" style="width: 8.5%" title="RMSNorm & Biases (0.29 GB)"></div>
+                            <div class="h-full bg-zinc-600" style="width: 6.0%" title="LM Head (0.20 GB)"></div>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] font-mono text-zinc-400">
+                            <div><span class="text-emerald-400">■</span> Ternary Core: <span class="text-zinc-200">2.47 GB</span></div>
+                            <div><span class="text-teal-400">■</span> CSR Outliers: <span class="text-zinc-200">0.44 GB</span></div>
+                            <div><span class="text-zinc-400">■</span> Norms/Bias: <span class="text-zinc-200">0.29 GB</span></div>
+                            <div><span class="text-zinc-600">■</span> LM Head: <span class="text-zinc-200">0.20 GB</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Zero Network Egress -->
+                <div class="md:col-span-4 bg-surface hairline rounded-[2px] p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-mono mb-4">
+                            <span class="text-zinc-400">EGRESS TELEMETRY</span>
+                            <span class="text-zinc-500">WAN RESTRICTION</span>
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-mono font-medium text-white tracking-tight mb-2">
+                            0.00 <span class="text-sm text-zinc-500 font-normal">KB / SEC</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Engine sockets bind strictly to the local loopback interface (<span class="font-mono text-zinc-200">127.0.0.1</span>). The runtime functions with all network interfaces physically disabled or severed.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-4 hairline-t space-y-2 text-[11px] font-mono">
+                        <div class="flex justify-between text-zinc-400">
+                            <span>Socket Binding:</span>
+                            <span class="text-zinc-200">127.0.0.1:7376</span>
+                        </div>
+                        <div class="flex justify-between text-zinc-400">
+                            <span>Cloud Relays:</span>
+                            <span class="text-emerald-400">NONE (AIR-GAPPED)</span>
+                        </div>
+                        <div class="flex justify-between text-zinc-400">
+                            <span>Third-Party Subpoena Risk:</span>
+                            <span class="text-zinc-200">INAPPLICABLE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Ingestion & Discovery Synthesis -->
+                <div class="md:col-span-6 bg-surface hairline rounded-[2px] p-6">
+                    <div class="flex items-center justify-between text-xs font-mono mb-4">
+                        <span class="text-zinc-400">DISCOVERY RECONSTRUCTION</span>
+                        <span class="text-zinc-500">CATASTROPHIC INJURY</span>
+                    </div>
+                    <div class="text-lg font-mono font-medium text-white mb-2">Deterministic Record Pinning</div>
+                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                        Converts 300+ pages of unstructured trauma operative narratives, emergency room radiology, and itemized lien statements into structured trial chronologies. Every finding carries an exact page-and-line citation anchored to source documents.
+                    </p>
+                    <div class="bg-zinc-950 p-3 rounded-[2px] hairline font-mono text-[11px] text-zinc-400">
+                        <div class="text-zinc-500">// TRIAL RECORD PINPOINT VERIFICATION</div>
+                        <div class="text-zinc-300 mt-1">Operative Note (C2-C5 Anterior Cervical Discectomy): Page 42, Line 18.</div>
+                        <div class="text-emerald-400 mt-0.5">Status: Verified against physical record hash.</div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Statutory Legal Authority -->
+                <div class="md:col-span-6 bg-surface hairline rounded-[2px] p-6">
+                    <div class="flex items-center justify-between text-xs font-mono mb-4">
+                        <span class="text-zinc-400">STATUTORY REASONING ENGINE</span>
+                        <span class="text-zinc-500">TEXAS & CALIFORNIA</span>
+                    </div>
+                    <div class="text-lg font-mono font-medium text-white mb-2">Lien Audit & Evidence Grounding</div>
+                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                        Embedded statutory logic for high-exposure litigation: Texas Civ. Prac. & Rem. Code Ch. 55 hospital lien caps, attachment invalidation protocols, California Civil Code § 3045.1 rules, and Federal Rule of Evidence 502 privilege safeguarding.
+                    </p>
+                    <div class="bg-zinc-950 p-3 rounded-[2px] hairline font-mono text-[11px] text-zinc-400">
+                        <div class="text-zinc-500">// STATUTORY ADMISSIBILITY AUDIT</div>
+                        <div class="text-zinc-300 mt-1">Tex. Civ. Prac. & Rem. Code § 55.002(a) Emergency Room Cap: AUDITED</div>
+                        <div class="text-emerald-400 mt-0.5">Statutory Exclusions Flagged: 3 Non-Emergency Itemizations</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Institutional Memorandum Section -->
+        <section class="py-16 px-6 max-w-6xl mx-auto hairline-t">
+            <div class="max-w-3xl">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">// INSTITUTIONAL CONTEXT</span>
+                <h2 class="text-2xl font-medium tracking-tight text-white mt-1 mb-6">
+                    The Legal Reality of Cloud Intelligence
+                </h2>
+                
+                <div class="space-y-4 text-sm text-zinc-400 leading-relaxed">
+                    <p>
+                        Under the <strong class="text-zinc-200 font-medium">Third-Party Doctrine</strong> and modern discovery precedents, information transmitted to third-party cloud infrastructure (such as OpenAI, Microsoft Azure, or AWS) forfeits the constitutional and common-law expectations of privacy.
+                    </p>
+                    <p>
+                        For catastrophic personal injury trial firms managing high-value matters, uploading unredacted medical chronologies, settlement reserves, or attorney mental impressions to cloud-hosted LLMs introduces severe exposure to opposing counsel subpoenas, inadvertent waiver challenges, and vendor data retention policies.
+                    </p>
+                    <p>
+                        <strong class="text-zinc-200 font-medium">Resonance Edge resolves this challenge at the hardware layer.</strong> By packaging complete 14B parameter foundation models into a 3.40 GB active memory footprint, the entire computation occurs physically inside your office, on your Apple Silicon workstation. Attorney-client privilege is not protected by terms of service—it is protected by physical laws.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluation Intake Section -->
+        <section id="evaluation" class="py-20 px-6 max-w-4xl mx-auto hairline-t">
+            <div class="bg-surface hairline rounded-[2px] p-8 sm:p-12">
+                <div class="mb-8">
+                    <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">// TECHNICAL EVALUATION INTAKE</span>
+                    <h2 class="text-2xl font-medium tracking-tight text-white mt-1">Institutional Deployment Inquiry</h2>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-2">
+                        We admit a selective cohort of catastrophic injury trial practices per release window. Complete the technical evaluation intake to initiate hardware verification.
+                    </p>
+                </div>
+
+                <form id="evaluation-form" class="space-y-4 text-xs font-mono">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block uppercase text-zinc-400 mb-1.5">Law Firm / Practice Entity</label>
+                            <input type="text" id="firm" required placeholder="e.g. Trial Counsel Group, LLP" class="w-full bg-zinc-950 hairline rounded-[2px] px-3.5 py-2.5 text-white focus:outline-none focus:border-zinc-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block uppercase text-zinc-400 mb-1.5">Lead Trial Counsel / Managing Partner</label>
+                            <input type="text" id="counsel" required placeholder="e.g. Lead Trial Counsel, Esq." class="w-full bg-zinc-950 hairline rounded-[2px] px-3.5 py-2.5 text-white focus:outline-none focus:border-zinc-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block uppercase text-zinc-400 mb-1.5">Official Firm Email</label>
+                            <input type="email" id="email" required placeholder="partner@firm.com" class="w-full bg-zinc-950 hairline rounded-[2px] px-3.5 py-2.5 text-white focus:outline-none focus:border-zinc-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block uppercase text-zinc-400 mb-1.5">Primary Practice Exposure</label>
+                            <select id="focus" class="w-full bg-zinc-950 hairline rounded-[2px] px-3.5 py-2.5 text-white focus:outline-none focus:border-zinc-500 transition-colors">
+                                <option value="Catastrophic Personal Injury">Catastrophic Personal Injury (7- & 8-Figure)</option>
+                                <option value="Traumatic Brain Injury (TBI)">Traumatic Brain Injury (TBI)</option>
+                                <option value="Commercial Trucking & Wrongful Death">Commercial Trucking & Wrongful Death</option>
+                                <option value="Complex Medical Malpractice">Complex Medical Malpractice</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block uppercase text-zinc-400 mb-1.5">Target Hardware Profile</label>
+                        <select id="hardware" class="w-full bg-zinc-950 hairline rounded-[2px] px-3.5 py-2.5 text-white focus:outline-none focus:border-zinc-500 transition-colors">
+                            <option value="Apple Silicon (M1/M2/M3/M4 Pro or Max Workstation)">Apple Silicon (M1/M2/M3/M4 Pro or Max Workstation)</option>
+                            <option value="Apple Silicon (Base M-Series 16GB RAM)">Apple Silicon (Base M-Series 16GB RAM)</option>
+                            <option value="Dedicated Air-Gapped Trial Laptop">Dedicated Air-Gapped Trial Laptop</option>
+                            <option value="Mixed Architecture (Mac & Enterprise Windows)">Mixed Architecture (Mac & Enterprise Windows)</option>
+                        </select>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full py-3 bg-zinc-900 hairline rounded-[2px] text-white hover:bg-zinc-800 hover:border-zinc-400 uppercase tracking-wider text-xs font-semibold transition-all">
+                            Submit Technical Evaluation Request
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] text-zinc-500 pt-2">
+                        <span>Direct inquiries: <a href="mailto:corporate@resonanceedge.tech" class="text-zinc-400 hover:underline">corporate@resonanceedge.tech</a></span>
+                        <span>Governed by Delaware C-Corp Corporate Charter</span>
+                    </div>
+                </form>
+
+                <!-- Confirmation Notice -->
+                <div id="evaluation-success" class="hidden text-xs font-mono py-8 text-center space-y-3">
+                    <div class="w-10 h-10 rounded-[2px] bg-emerald-500/10 hairline border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+                        <i data-lucide="check" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-sm font-medium text-white">EVALUATION INTAKE REGISTERED</div>
+                    <div class="text-zinc-400 max-w-sm mx-auto leading-relaxed">
+                        Credentials recorded. Technical evaluation profile will be reviewed by executive engineering.
+                    </div>
+                    <div class="text-zinc-500 text-[10px]">
+                        DISPATCH TICKET: <span id="ticket-id" class="text-zinc-300">RES-EVAL-2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Institutional Footer -->
+    <footer class="hairline-t bg-obsidian py-10 px-6 relative z-10 text-[11px] font-mono text-zinc-500">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="text-zinc-300 font-semibold tracking-wider uppercase">RESONANCE EDGE, INC.</span>
+                <span class="text-zinc-700">|</span>
+                <span>DELAWARE C-CORPORATION</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span>ON-PREMISE SILICON SUBSTRATE</span>
+                <span class="text-zinc-700">|</span>
+                <a href="mailto:corporate@resonanceedge.tech" class="text-zinc-400 hover:text-white transition-colors">corporate@resonanceedge.tech</a>
+            </div>
+
+            <div>
+                <span>© 2026 Resonance Edge, Inc. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Handler Script -->
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('evaluation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const firm = document.getElementById('firm').value;
+            const counsel = document.getElementById('counsel').value;
+            const email = document.getElementById('email').value;
+            const focus = document.getElementById('focus').value;
+            const hw = document.getElementById('hardware').value;
+
+            const ticketNum = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('ticket-id').innerText = `RES-EVAL-${ticketNum}`;
+
+            document.getElementById('evaluation-form').classList.add('hidden');
+            document.getElementById('evaluation-success').classList.remove('hidden');
+
+            const subject = encodeURIComponent(`Technical Evaluation Request: ${firm} (${counsel})`);
+            const body = encodeURIComponent(
+                `RESONANCE EDGE — TECHNICAL EVALUATION INTAKE\n\n` +
+                `Firm Entity: ${firm}\n` +
+                `Lead Counsel: ${counsel}\n` +
+                `Contact Email: ${email}\n` +
+                `Practice Exposure: ${focus}\n` +
+                `Hardware Profile: ${hw}\n` +
+                `Ticket Reference: RES-EVAL-${ticketNum}\n`
+            );
+            window.location.href = `mailto:corporate@resonanceedge.tech?subject=${subject}&body=${body}`;
+        });
+    </script>
+</body>
+</html>
