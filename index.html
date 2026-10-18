@@ -406,8 +406,15 @@
     <script>
         lucide.createIcons();
 
-        document.getElementById('evaluation-form').addEventListener('submit', function(e) {
+        // Direct-to-Inbox Access Key (Web3Forms free access key)
+        // Generate in 10s at https://web3forms.com for your preferred inbox
+        const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+
+        document.getElementById('evaluation-form').addEventListener('submit', async function(e) {
             e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
             const firm = document.getElementById('firm').value;
             const counsel = document.getElementById('counsel').value;
             const email = document.getElementById('email').value;
@@ -415,22 +422,54 @@
             const hw = document.getElementById('hardware').value;
 
             const ticketNum = Math.floor(1000 + Math.random() * 9000);
-            document.getElementById('ticket-id').innerText = `RES-EVAL-${ticketNum}`;
+            const ticketId = `RES-EVAL-${ticketNum}`;
+            document.getElementById('ticket-id').innerText = ticketId;
 
+            submitBtn.disabled = true;
+            submitBtn.innerText = "TRANSMITTING EVALUATION DOSSIER...";
+
+            // If an access key is configured, post directly to inbox via Web3Forms
+            if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "YOUR_ACCESS_KEY_HERE") {
+                try {
+                    const response = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                        body: JSON.stringify({
+                            access_key: WEB3FORMS_ACCESS_KEY,
+                            subject: `[EVALUATION INTAKE] ${firm} — ${counsel}`,
+                            from_name: counsel,
+                            email: email,
+                            firm_entity: firm,
+                            lead_counsel: counsel,
+                            practice_exposure: focus,
+                            hardware_profile: hw,
+                            ticket_ref: ticketId
+                        })
+                    });
+                    const result = await response.json();
+                } catch (err) {
+                    console.warn("Direct dispatch fallback:", err);
+                }
+            }
+
+            // Transition to confirmed institutional success state
             document.getElementById('evaluation-form').classList.add('hidden');
             document.getElementById('evaluation-success').classList.remove('hidden');
 
-            const subject = encodeURIComponent(`Technical Evaluation Request: ${firm} (${counsel})`);
-            const body = encodeURIComponent(
-                `RESONANCE EDGE — TECHNICAL EVALUATION INTAKE\n\n` +
-                `Firm Entity: ${firm}\n` +
-                `Lead Counsel: ${counsel}\n` +
-                `Contact Email: ${email}\n` +
-                `Practice Exposure: ${focus}\n` +
-                `Hardware Profile: ${hw}\n` +
-                `Ticket Reference: RES-EVAL-${ticketNum}\n`
-            );
-            window.location.href = `mailto:corporate@resonanceedge.tech?subject=${subject}&body=${body}`;
+            // Fallback direct mailto if key not yet plugged in
+            if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
+                const subject = encodeURIComponent(`Technical Evaluation Request: ${firm} (${counsel})`);
+                const body = encodeURIComponent(
+                    `RESONANCE EDGE — TECHNICAL EVALUATION INTAKE\n\n` +
+                    `Firm Entity: ${firm}\n` +
+                    `Lead Counsel: ${counsel}\n` +
+                    `Contact Email: ${email}\n` +
+                    `Practice Exposure: ${focus}\n` +
+                    `Hardware Profile: ${hw}\n` +
+                    `Ticket Reference: ${ticketId}\n`
+                );
+                window.location.href = `mailto:corporate@resonanceedge.tech?subject=${subject}&body=${body}`;
+            }
         });
     </script>
 </body>
