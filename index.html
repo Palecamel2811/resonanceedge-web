@@ -49,6 +49,9 @@
         }
     </script>
 
+    <!-- Three.js 3D WebGL Library for Scroll-Linked Mathematical Canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -86,6 +89,9 @@
 </head>
 
 <body class="bg-obsidian text-zinc-300 font-sans antialiased selection:bg-emerald-500 selection:text-black min-h-screen relative overflow-x-hidden">
+
+    <!-- 3D WebGL Mathematical Gosset/Hadamard Lattice Canvas -->
+    <canvas id="webgl-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
 
     <!-- CAD Coordinate Background Grid -->
     <div class="fixed inset-0 cad-grid pointer-events-none z-0"></div>
@@ -471,6 +477,179 @@
                 window.location.href = `mailto:corporate@resonanceedge.tech?subject=${subject}&body=${body}`;
             }
         });
+    </script>
+
+    <!-- 3D WebGL Three.js Mathematical Lattice Engine (Multiverse-Inspired Scroll-Linked Canvas) -->
+    <script>
+        (function initWebGLBackground() {
+            const canvas = document.getElementById('webgl-canvas');
+            if (!canvas || !window.THREE) return;
+
+            // 1. Scene, Camera, & WebGL Hardware Renderer
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+            camera.position.z = 7.2;
+
+            const renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                alpha: true,
+                antialias: true,
+                powerPreference: 'high-performance'
+            });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            // 2. Master Mathematical Polytope Lattice Group
+            const latticeGroup = new THREE.Group();
+            scene.add(latticeGroup);
+
+            // A. Inner Core Lattice: Wireframe Icosahedron (Hadamard Isometric Basis)
+            const innerGeo = new THREE.IcosahedronGeometry(1.8, 1);
+            const innerWire = new THREE.WireframeGeometry(innerGeo);
+            const innerMat = new THREE.LineBasicMaterial({
+                color: 0x10b981, // Resonance Emerald
+                transparent: true,
+                opacity: 0.22,
+                blending: THREE.AdditiveBlending
+            });
+            const innerLattice = new THREE.LineSegments(innerWire, innerMat);
+            latticeGroup.add(innerLattice);
+
+            // B. Outer Concentric Shell: Geodesic Polytope (E8 Hyper-Sphere Projection)
+            const outerGeo = new THREE.IcosahedronGeometry(2.7, 2);
+            const outerWire = new THREE.WireframeGeometry(outerGeo);
+            const outerMat = new THREE.LineBasicMaterial({
+                color: 0x06b6d4, // Cyan Isometry
+                transparent: true,
+                opacity: 0.12,
+                blending: THREE.AdditiveBlending
+            });
+            const outerLattice = new THREE.LineSegments(outerWire, outerMat);
+            latticeGroup.add(outerLattice);
+
+            // C. 240 Gosset E8 Lattice Root Point Cloud
+            const rootCount = 240;
+            const rootPositions = new Float32Array(rootCount * 3);
+            const phi = (1 + Math.sqrt(5)) / 2;
+
+            for (let i = 0; i < rootCount; i++) {
+                // Golden spiral on sphere surface
+                const theta = 2 * Math.PI * i / phi;
+                const y = 1 - (i / (rootCount - 1)) * 2;
+                const radiusAtY = Math.sqrt(1 - y * y);
+                const x = Math.cos(theta) * radiusAtY;
+                const z = Math.sin(theta) * radiusAtY;
+
+                const r = 2.72; // Snap to outer shell boundary
+                rootPositions[i * 3]     = x * r;
+                rootPositions[i * 3 + 1] = y * r;
+                rootPositions[i * 3 + 2] = z * r;
+            }
+
+            const rootGeo = new THREE.BufferGeometry();
+            rootGeo.setAttribute('position', new THREE.BufferAttribute(rootPositions, 3));
+            const rootMat = new THREE.PointsMaterial({
+                color: 0x34d399,
+                size: 0.045,
+                transparent: true,
+                opacity: 0.75,
+                blending: THREE.AdditiveBlending
+            });
+            const rootPoints = new THREE.Points(rootGeo, rootMat);
+            latticeGroup.add(rootPoints);
+
+            // D. Concentric CAD Coordinate Isometry Rings
+            const createCadRing = (radius, tiltX, tiltY, colorHex) => {
+                const ringGeo = new THREE.RingGeometry(radius, radius + 0.015, 64);
+                const ringMat = new THREE.MeshBasicMaterial({
+                    color: colorHex,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                    opacity: 0.08,
+                    blending: THREE.AdditiveBlending
+                });
+                const ring = new THREE.Mesh(ringGeo, ringMat);
+                ring.rotation.x = tiltX;
+                ring.rotation.y = tiltY;
+                return ring;
+            };
+
+            latticeGroup.add(createCadRing(3.4, Math.PI / 2, 0, 0x10b981));
+            latticeGroup.add(createCadRing(3.6, Math.PI / 4, Math.PI / 6, 0x06b6d4));
+            latticeGroup.add(createCadRing(3.8, -Math.PI / 3, Math.PI / 4, 0x38bdf8));
+
+            // E. Dynamic Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+
+            const emeraldLight = new THREE.DirectionalLight(0x10b981, 1.5);
+            emeraldLight.position.set(5, 5, 5);
+            scene.add(emeraldLight);
+
+            const cyanLight = new THREE.DirectionalLight(0x06b6d4, 1.2);
+            cyanLight.position.set(-5, -5, 5);
+            scene.add(cyanLight);
+
+            // 3. Scroll-Linked Interaction Physics & Parallax Damping
+            let scrollProgress = 0;
+            let targetScrollProgress = 0;
+            let mouseX = 0, mouseY = 0;
+            let targetMouseX = 0, targetMouseY = 0;
+
+            function updateScroll() {
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                targetScrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+            }
+            window.addEventListener('scroll', updateScroll, { passive: true });
+            updateScroll();
+
+            window.addEventListener('mousemove', (e) => {
+                targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            }, { passive: true });
+
+            // 4. Responsive Viewport Handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                updateScroll();
+            });
+
+            // 5. High-Precision 60fps Render Loop
+            let lastTime = 0;
+            function animate(time) {
+                requestAnimationFrame(animate);
+
+                // Battery Saver: Halt GPU pipeline when tab is in background
+                if (document.hidden) return;
+
+                const dt = (time - lastTime) * 0.001;
+                lastTime = time;
+
+                // Smooth spring damping (Lerp)
+                scrollProgress += (targetScrollProgress - scrollProgress) * 0.05;
+                mouseX += (targetMouseX - mouseX) * 0.04;
+                mouseY += (targetMouseY - mouseY) * 0.04;
+
+                const t = time * 0.0003;
+
+                // Continuous ambient orbital drift + scroll-driven multidimensional rotation
+                latticeGroup.rotation.y = t * 0.3 + scrollProgress * Math.PI * 3.5;
+                latticeGroup.rotation.x = Math.sin(t * 0.4) * 0.15 + scrollProgress * Math.PI * 2.0 + mouseY * 0.25;
+                latticeGroup.rotation.z = Math.cos(t * 0.3) * 0.10 + scrollProgress * Math.PI * 1.0 + mouseX * 0.25;
+
+                // Camera trajectory: zooms subtly during hardware telemetry section, glides smoothly
+                const zoomWave = Math.sin(scrollProgress * Math.PI);
+                camera.position.z = 7.2 - zoomWave * 1.6;
+                camera.position.y = -scrollProgress * 1.4 + mouseY * 0.15;
+                camera.position.x = mouseX * 0.2;
+
+                renderer.render(scene, camera);
+            }
+
+            requestAnimationFrame(animate);
+        })();
     </script>
 </body>
 </html>
